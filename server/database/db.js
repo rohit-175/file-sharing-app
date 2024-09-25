@@ -1,7 +1,7 @@
 import mongoose from "mongoose"
 
 const DBconnection = async () => {
-    const MONGODB_URI = `mongodb+srv://saseendranrohit3002:mango_roni175@file-transfer.ocqzy.mongodb.net/?retryWrites=true&w=majority&appName=file-transfer`
+    const MONGODB_URI = process.env.MONGODB_URI;
     try{
         await mongoose.connect(MONGODB_URI, { useNewUrlParser: true })
         console.log("Database connection successfull")
